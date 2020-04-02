@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # -*- encoding: Windows-31j -*-
 # 引数指定ディレクトリ配下ファイルのタイムスタンプをランダムに変更
-#
 
 $:.unshift File.expand_path("./", File.dirname(__FILE__))
 require 'lib/file_picker'
@@ -20,8 +19,6 @@ def edit_stamp(dir_path)
   end.done
 end
 
-
 # --- main ---
 edit_stamp(ARGV[0])
-
 

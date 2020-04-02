@@ -5,20 +5,15 @@ require 'fileutils'
 require 'pathname'
 require 'find'
 require 'pp'
+require 'optimist'
 
-$:.unshift File.expand_path("./", File.dirname(__FILE__))
-require 'lib/trollop'
-
-
-opts = Trollop::options do
+opts = Optimist::options do
   opt :src, "source path",      :type => :string,  :required => true
   opt :dst, "destination path", :type => :string,  :required => true
   opt :c,   "char code",        :type => :string 
 end
-#Trollop::die :number,"require" unless opts[:src]
 
 Dir::chdir(opts[:src]) do
-
   Dir.glob("*").each do |p|
     puts "make_dir #{opts[:dst]}/#{p}"
     FileUtils.mkdir_p("#{opts[:dst]}/#{p}")

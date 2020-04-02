@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-# -*- encoding: Windows-31j -*-
+# -*- encoding: UTF-8 -*-
 
 require 'fileutils'
-require 'trollop'
+require 'optimist'
 
 $:.unshift File.expand_path("./", File.dirname(__FILE__))
 require 'lib/file_picker'
@@ -26,12 +26,11 @@ def numer(dir,ext,exe)
 end
 
 # --- main ---
-opts = Trollop::options do
+opts = Optimist::options do
   banner <<-EOS
   #{File::basename(__FILE__)}:
     ファイル名うまく付け直しユーティリティ
      - 単純番号付けのファイルを任意桁を0でパディングする事でWindowsのファイル並び対策
-     
 EOS
   opt :x, "execute", :default=> false
   opt :dir, "target dir", :type=> String

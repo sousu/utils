@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 # -*- encoding: UTF-8 -*- 
 
-require 'trollop'
+require 'optimist'
 require 'mechanize'
 require 'pp'
 
-opts = Trollop::options do
+opts = Optimist::options do
   banner <<-EOS
 resl.rb - get pod pdf
   EOS
@@ -13,7 +13,6 @@ resl.rb - get pod pdf
   opt :pas,"password", :type=> String
   opt :dir,"destnation", :type=> String
 end
-Trollop::die "You should set options" unless opts[:usr] and opts[:pas] and opts[:dir]
 
 agent = Mechanize.new
 agent.verify_mode = OpenSSL::SSL::VERIFY_NONE

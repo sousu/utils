@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 # -*- encoding: UTF-8 -*-
-#
 # eplapを使ってのExcelファイル処理
-#
 
 require 'nkf'
 require 'pp'
@@ -19,11 +17,9 @@ require 'lib/exlap'
 #logger = Log.new(STDOUT,Log::INFO)
 logger = Log.new(STDOUT,Log::DEBUG)
 
-#
 # - 項目の基準となる結合セル最下部までの行を調べる
 # - その行までを一つのブロックと捉え各列で左上から配列化
 # - 「ふるい」などを利用して意味ある値を取り出す
-#
 
 fpath = "res/data.xlsx"
 exlap = Exlap.new 

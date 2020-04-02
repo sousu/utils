@@ -2,12 +2,11 @@
 # --- ---
 # DropBox任意dirに転送
 # --- ---
-$:.unshift File.expand_path("./", File.dirname(__FILE__))
 
 require 'fileutils'
 require 'find'
+$:.unshift File.expand_path("./", File.dirname(__FILE__))
 require 'lib/log'
-
 
 logger = Log.new(STDERR,Log::DEBUG)
 logger = Log.new(STDERR,Log::INFO)
