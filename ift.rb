@@ -7,7 +7,7 @@ require 'selenium-webdriver'
 require 'pp'
 
 opts = Optimist::options do
-  opt :config,"config file",:type=>:string
+  opt :config,"Set config file",:type=>:string
 end
 exit unless opts[:config]
 cnf = YAML.load_file(opts[:config])
