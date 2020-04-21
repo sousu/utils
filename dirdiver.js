@@ -7,7 +7,7 @@ if(!String.prototype.repeat){
    };
 }
 function println(s){
-	WScript.echo(s);
+    WScript.echo(s);
 }
 function DirDiver(){
     var fsys = WScript.CreateObject("Scripting.FileSystemObject");
@@ -77,8 +77,6 @@ function DirDiver(){
 }
 
 // --- main ---
-var myShell = WScript.CreateObject("WScript.Shell");
-
 var dd = new DirDiver();
 dd.setDir('c:\\',3);
 dd.setFunc('pre',function(d){
