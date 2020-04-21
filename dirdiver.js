@@ -2,9 +2,9 @@
 // DirDiv: dir enumrater
 //
 if(!String.prototype.repeat){
-   String.prototype.repeat = function(count){
-      return Array(count*1+1).join(this);
-   };
+    String.prototype.repeat = function(count){
+        return Array(count*1+1).join(this);
+    };
 }
 function println(s){
     WScript.echo(s);
