@@ -19,7 +19,7 @@ class Anki
   end
 
   def num
-    (10*(120-@n.to_i)/120).to_i
+    (7*(120-@n.to_i)/120).to_i
   end
 end
 
