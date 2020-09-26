@@ -5,15 +5,17 @@
 var description = function(){/*
 
 ÅV”Œ‚ğc‚µ‚Äold‚ÖˆÚ“®
-  usage: mvold.wsf [folder] [cnt]
+  usage: mvold.wsf [folder] [cnt] ["old" or oldfolder]
 
 */}.toString().replace(/function+\W+\*|\*\/}$/g, "").replace(/^\r\n|^\r|^\n/, "");
-if(WScript.Arguments.length != 2){
+if(WScript.Arguments.length != 3){
    println(description);
    return;
 }
 var folder = WScript.Arguments(0);
 var cnt = WScript.Arguments(1);
+var old = WScript.Arguments(2);
+if(old=="old") old = folder+"/old"
 
 var list = [];
 eachFile(folder,function(f,path){
@@ -28,8 +30,8 @@ list.sort(function(a,b){ //V‚µ‚¢‡‚É•À‚Ñ‘Ö‚¦
 println("mvold start");
 for(var i=0; i<list.length; i++){
     if(i<cnt) continue;
-    moveForce(list[i][0],folder+"/old/");
-    println("move to old: "+list[i][0]);
+    moveForce(list[i][0],old+"/");
+    println("move to "+old+":"+list[i][0]);
 }
 
 })();
