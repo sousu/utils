@@ -19,7 +19,7 @@ class Anki
   end
 
   def num
-    n = (7*(120-@n.to_i)/120).to_i
+    n = (7*(100-@n.to_i)/100).to_i
     n >= 0 ? n : 0
   end
 end
